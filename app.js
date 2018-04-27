@@ -30,20 +30,25 @@ if(fs.existsSync(logFilePath)){
     logging(logFileName, 'Start of the log file:');
 }
 
+let someDate = new Date();
+
+console.log(someDate.toString());
+
 // create server
 const server = new http.Server();
 
 server.on('request', (req, res) => {
+    
+    let mom1 = new Date().getSeconds(); 
 
     if(req.method == 'GET' && req.url == '/'){
         res.writeHead(200, {'Content-type': fileMimeType});
         // create stream and send chinks with response
-        const stream = fs.createReadStream(filepath, {highWaterMark: 100000});
+        const stream = fs.createReadStream(filepath, {highWaterMark: 10000});
         stream.pipe(res);
-        console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
-        stream.on('readable', () => {
-            console.log('file is readable');
+        stream.once('readable', () => {
+            // console.log('file is readable');
         });
 
         stream.on('data', (chunk) => {
@@ -53,6 +58,12 @@ server.on('request', (req, res) => {
         stream.on('end', (chunk) => {
             console.log('Sending finished.');
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
+            let mom2 = new Date().getMilliseconds();
+            console.log(mom2 - mom1);
+        });
+
+        stream.on('close', () => {
+            console.log('Closed by user.');
         });
 
     } else{
