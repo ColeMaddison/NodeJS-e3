@@ -7,19 +7,31 @@ const mime = require('mime-types');
 
 const filepath = path.join(__dirname, '.', "generated.json");
 
-const stream = fs.createReadStream(filepath);
+// get file mime-type
+let fileMimeType = mime.contentType(filepath).split(';')[0];
 
-stream.once('readable', () => {
-    console.log(filepath, 'is readable');
-    console.log(mime.contentType(filepath).split(';')[0]);
-    stream.destroy();
-});
-
+// create server
 const server = new http.Server();
 
 server.on('request', (req, res) => {
     if(req.method == 'GET' && req.url == '/'){
-        console.log(filetype(filepath));
+        res.writeHead(200, {'Content-type': fileMimeType});
+
+        const stream = fs.createReadStream(filepath, {highWaterMark: 10000});
+        stream.pipe(res);
+
+        stream.on('readable', () => {
+            console.log('file is readable');
+        });
+
+        stream.on('data', (chunk) => {
+            console.log(chunk.length);
+        });
+
+        stream.on('end', (chunk) => {
+            console.log('Sending finished.');
+        });
+
     } else{
         res.writeHead(404);
     }
