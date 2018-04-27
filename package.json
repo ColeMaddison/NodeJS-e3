@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "mime-types": "^2.1.18"
+  },
+  "dependencies": {
+    "moment": "^2.22.1"
   }
 }
