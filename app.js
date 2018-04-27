@@ -14,9 +14,11 @@ let fileMimeType = mime.contentType(filepath).split(';')[0];
 const server = new http.Server();
 
 server.on('request', (req, res) => {
+
+
     if(req.method == 'GET' && req.url == '/'){
         res.writeHead(200, {'Content-type': fileMimeType});
-
+        // create stream and send chinks with response
         const stream = fs.createReadStream(filepath, {highWaterMark: 10000});
         stream.pipe(res);
 
