@@ -1,1 +1,10 @@
-Start of the log file:
+
+Sending start time: Sun Apr 29 2018 22:37:37 GMT+0300 (Финляндия (лето))
+Sending finish time: Sun Apr 29 2018 22:37:37 GMT+0300 (Финляндия (лето))
+Sending took 0.884s.
+
+
+Sending start time: Sun Apr 29 2018 22:53:43 GMT+0300 (Финляндия (лето))
+Sending finish time: Sun Apr 29 2018 22:53:43 GMT+0300 (Финляндия (лето))
+Sending took 0.384s. and finished with status 200
+

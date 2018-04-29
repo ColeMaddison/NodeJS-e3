@@ -27,18 +27,18 @@ if(fs.existsSync(logFilePath)){
     // fs.appendFile('log_file.txt', 'Start of the log file:', () => {
     //     console.log('Log file is created and ready.');
     // });
-    logging(logFileName, 'Start of the log file:');
+    logging(logFileName, 'Start of the log file:\n');
 }
-
-let someDate = new Date();
-
-console.log(someDate.toString());
 
 // create server
 const server = new http.Server();
 
 server.on('request', (req, res) => {
     
+    let startDate = new Date();
+    console.log(startDate.toString());
+    logging(logFileName, `\nSending start time: ${startDate.toString()}\n`);
+
     let mom1 = new Date().getSeconds(); 
 
     if(req.method == 'GET' && req.url == '/'){
@@ -52,19 +52,27 @@ server.on('request', (req, res) => {
         });
 
         stream.on('data', (chunk) => {
-            console.log(chunk.length);
+            // console.log(chunk.length);
         });
 
         stream.on('end', (chunk) => {
             console.log('Sending finished.');
-            console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
-            let mom2 = new Date().getMilliseconds();
-            console.log(mom2 - mom1);
+            // console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
         });
 
         stream.on('close', () => {
-            console.log('Closed by user.');
+            console.log('Connection closed.');
+            let finishDate = new Date();
+
+            logging(logFileName, `Sending finish time: ${finishDate.toString()}\n`);
+
+            let mom2 = new Date().getMilliseconds();
+            let timeTaken = mom2 - mom1;
+            console.log(mom2 - mom1);
+            logging(logFileName, `Sending took ${timeTaken/1000}s. and finished with status code ${res.statusCode}\n\n`);
         });
+
+        console.log(res.statusCode);
 
     } else{
         res.writeHead(404);
