@@ -36,12 +36,14 @@ const server = new http.Server();
 server.on('request', (req, res) => {
     
     let startDate = new Date();
-    console.log(startDate.toString());
-    logging(logFileName, `\nSending start time: ${startDate.toString()}\n`);
+    console.log(startDate.toLocaleTimeString());
 
     let mom1 = new Date().getSeconds(); 
 
     if(req.method == 'GET' && req.url == '/'){
+        
+        logging(logFileName, `\nSending start time: ${startDate.toLocaleTimeString()} ${startDate.toLocaleDateString()}\n`);
+        
         res.writeHead(200, {'Content-type': fileMimeType});
         // create stream and send chinks with response
         const stream = fs.createReadStream(filepath, {highWaterMark: 10000});
@@ -64,7 +66,7 @@ server.on('request', (req, res) => {
             console.log('Connection closed.');
             let finishDate = new Date();
 
-            logging(logFileName, `Sending finish time: ${finishDate.toString()}\n`);
+            logging(logFileName, `Sending finish time: ${finishDate.toLocaleTimeString()} ${finishDate.toLocaleDateString()}\n`);
 
             let mom2 = new Date().getMilliseconds();
             let timeTaken = mom2 - mom1;
@@ -82,3 +84,15 @@ server.on('request', (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => console.log(`Server up and running on port ${PORT}`));
+
+// log requests and response info every minute
+let logMinute = () => {
+    
+    // logging(logFileName, `On: ${logMinuteDate.toLocaleTimeString()} ${logMinuteDate.toLocaleDateString()} got:\n
+    //                         `);
+};
+
+let logTimer = setInterval(() => {
+    let logMinuteDate = new Date();
+    logging(logFileName, `checking forever!!!11 ${logMinuteDate.toLocaleTimeString()}\n\n`);
+}, 10000); // change to 60 000 later

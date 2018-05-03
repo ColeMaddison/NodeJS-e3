@@ -1,10 +1,28 @@
+Start of the log file:
+checking forever!!!11 23:17:56
 
-Sending start time: Sun Apr 29 2018 22:37:37 GMT+0300 (Финляндия (лето))
-Sending finish time: Sun Apr 29 2018 22:37:37 GMT+0300 (Финляндия (лето))
-Sending took 0.884s.
+checking forever!!!11 23:18:06
+
+checking forever!!!11 23:18:16
 
 
-Sending start time: Sun Apr 29 2018 22:53:43 GMT+0300 (Финляндия (лето))
-Sending finish time: Sun Apr 29 2018 22:53:43 GMT+0300 (Финляндия (лето))
-Sending took 0.384s. and finished with status 200
+Sending start time: 23:18:25 2018-5-3
+Sending finish time: 23:18:25 2018-5-3
+Sending took 0.425s. and finished with status code 200
+
+checking forever!!!11 23:18:26
+
+
+Sending start time: 23:18:33 2018-5-3
+Sending finish time: 23:18:33 2018-5-3
+Sending took 0.502s. and finished with status code 200
+
+
+Sending start time: 23:18:36 2018-5-3
+checking forever!!!11 23:18:36
+
+Sending finish time: 23:18:36 2018-5-3
+Sending took 0.875s. and finished with status code 200
+
+checking forever!!!11 23:18:46
 
