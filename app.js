@@ -10,6 +10,13 @@ const filepath = path.join(__dirname, '.', "generated.json");
 let logFileName = 'log_file.txt';
 const logFilePath = path.join(__dirname, '.', logFileName);
 
+// response info obj - use for logging res url, user agent, total response handle time - info for all requests
+let resInfo = {};
+resInfo = {
+    reqCounter: 0,
+    connectionInfo: [] // userAgents: [], urls: [], totalResTime: 0
+};
+
 // get file mime-type
 let fileMimeType = mime.contentType(filepath).split(';')[0];
 
@@ -23,10 +30,7 @@ let logging = (file, data) => {
 // checking whether the log exists if not - create it - prevents doubling the first string in the file('start the log file')
 if(fs.existsSync(logFilePath)){
     console.log('Log file is ready.');
-} else{    
-    // fs.appendFile('log_file.txt', 'Start of the log file:', () => {
-    //     console.log('Log file is created and ready.');
-    // });
+} else{
     logging(logFileName, 'Start of the log file:\n');
 }
 
@@ -35,12 +39,23 @@ const server = new http.Server();
 
 server.on('request', (req, res) => {
     
+    // get date of the request
     let startDate = new Date();
-    console.log(startDate.toLocaleTimeString());
 
+    // get starting second of the request
     let mom1 = new Date().getSeconds(); 
 
     if(req.method == 'GET' && req.url == '/'){
+
+        // connection info for one request
+        let reqResInfo = {
+            userAgent: req ? req.headers['user-agent'] : "Nothing requested",
+            url: req.url,
+            totalResTime: 0
+        };
+
+        // increase counter on every req
+        resInfo.reqCounter++;
         
         logging(logFileName, `\nSending start time: ${startDate.toLocaleTimeString()} ${startDate.toLocaleDateString()}\n`);
         
@@ -49,17 +64,8 @@ server.on('request', (req, res) => {
         const stream = fs.createReadStream(filepath, {highWaterMark: 10000});
         stream.pipe(res);
 
-        stream.once('readable', () => {
-            // console.log('file is readable');
-        });
-
-        stream.on('data', (chunk) => {
-            // console.log(chunk.length);
-        });
-
         stream.on('end', (chunk) => {
             console.log('Sending finished.');
-            // console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
         });
 
         stream.on('close', () => {
@@ -68,13 +74,15 @@ server.on('request', (req, res) => {
 
             logging(logFileName, `Sending finish time: ${finishDate.toLocaleTimeString()} ${finishDate.toLocaleDateString()}\n`);
 
+            // get finishing second of the request
             let mom2 = new Date().getMilliseconds();
             let timeTaken = mom2 - mom1;
-            console.log(mom2 - mom1);
+            
+            reqResInfo.totalResTime = timeTaken;
+
             logging(logFileName, `Sending took ${timeTaken/1000}s. and finished with status code ${res.statusCode}\n\n`);
         });
-
-        console.log(res.statusCode);
+        resInfo.connectionInfo.push(reqResInfo);
 
     } else{
         res.writeHead(404);
@@ -86,13 +94,22 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => console.log(`Server up and running on port ${PORT}`));
 
 // log requests and response info every minute
-let logMinute = () => {
-    
-    // logging(logFileName, `On: ${logMinuteDate.toLocaleTimeString()} ${logMinuteDate.toLocaleDateString()} got:\n
-    //                         `);
-};
-
 let logTimer = setInterval(() => {
+    // get the reqinfo connection array
+    let reqConnection = resInfo.connectionInfo;
+
+    // array for gathering req-res information
+    let conArr = [];
+
+    if(resInfo.reqCounter){
+        conArr = reqConnection.map((item) => {
+            return `\tUser agent: ${item.userAgent},---- URL: ${item.url},---- Time taken: ${item.totalResTime}ms`;
+        });
+    } else {
+        conArr.push('Nothing requested.');
+    }
+
     let logMinuteDate = new Date();
-    logging(logFileName, `checking forever!!!11 ${logMinuteDate.toLocaleTimeString()}\n\n`);
-}, 10000); // change to 60 000 later
+    logging(logFileName, `Every minute check: ${logMinuteDate.toLocaleTimeString()}\nRequests info:\n${conArr.join('\n')}\n\n`);
+    resInfo.reqCounter = 0;
+}, 60000); // change to 60 000 later

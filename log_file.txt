@@ -1,28 +1,142 @@
 Start of the log file:
-checking forever!!!11 23:17:56
 
-checking forever!!!11 23:18:06
+Sending start time: 23:27:31 2018-5-5
+Sending finish time: 23:27:32 2018-5-5
+Sending took 0.018s. and finished with status code 200
 
-checking forever!!!11 23:18:16
+checking forever!!!11 23:27:37
+undefined
+
+    Number of reqs1
+
+checking forever!!!11 23:29:04
+undefined
+
+    Number of reqs0
+
+checking forever!!!11 23:30:53
+undefined
+
+    Number of reqs0
+
+checking forever!!!11 23:32:21
+Nothing was requested.
+
+    Number of reqs0
 
 
-Sending start time: 23:18:25 2018-5-3
-Sending finish time: 23:18:25 2018-5-3
-Sending took 0.425s. and finished with status code 200
+Sending start time: 23:32:31 2018-5-5
+Sending finish time: 23:32:32 2018-5-5
+Sending took -0.017s. and finished with status code 200
 
-checking forever!!!11 23:18:26
+checking forever!!!11 23:32:41
+Nothing was requested.
 
-
-Sending start time: 23:18:33 2018-5-3
-Sending finish time: 23:18:33 2018-5-3
-Sending took 0.502s. and finished with status code 200
+    Number of reqs1
 
 
-Sending start time: 23:18:36 2018-5-3
-checking forever!!!11 23:18:36
+Sending start time: 23:32:55 2018-5-5
+Sending finish time: 23:32:55 2018-5-5
+Sending took 0.455s. and finished with status code 200
 
-Sending finish time: 23:18:36 2018-5-3
-Sending took 0.875s. and finished with status code 200
+checking forever!!!11 23:33:01
+Nothing was requested.
 
-checking forever!!!11 23:18:46
+    Number of reqs1
+
+Every minute check: 23:36:17
+
+
+Every minute check: 23:42:24
+Nothing requested.
+
+
+Sending start time: 23:42:30 2018-5-5
+Sending finish time: 23:42:30 2018-5-5
+Sending took 0.87s. and finished with status code 200
+
+
+Sending start time: 23:42:34 2018-5-5
+Sending finish time: 23:42:34 2018-5-5
+Sending took 0.885s. and finished with status code 200
+
+
+Sending start time: 23:42:38 2018-5-5
+Sending finish time: 23:42:38 2018-5-5
+Sending took 0.706s. and finished with status code 200
+
+Every minute check: 23:42:44
+User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0, URL: /, Time taken: 870ms
+User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0, URL: /, Time taken: 885ms
+User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0, URL: /, Time taken: 706ms
+
+Every minute check: 23:43:04
+Nothing requested.
+
+Every minute check: 23:43:24
+Nothing requested.
+
+Every minute check: 23:43:44
+Nothing requested.
+
+Every minute check: 23:44:04
+Nothing requested.
+
+Every minute check: 23:44:34
+Nothing requested.
+
+
+Sending start time: 23:44:36 2018-5-5
+Sending finish time: 23:44:36 2018-5-5
+Sending took 0.759s. and finished with status code 200
+
+
+Sending start time: 23:44:39 2018-5-5
+Sending finish time: 23:44:40 2018-5-5
+Sending took 0.272s. and finished with status code 200
+
+
+Sending start time: 23:44:43 2018-5-5
+Sending finish time: 23:44:43 2018-5-5
+Sending took 0.913s. and finished with status code 200
+
+
+Sending start time: 23:44:47 2018-5-5
+Sending finish time: 23:44:47 2018-5-5
+Sending took 0.508s. and finished with status code 200
+
+Every minute check: 23:44:54
+	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 759ms
+	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 272ms
+	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 913ms
+	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 508ms
+
+Every minute check: 23:46:00
+All requests:
+Nothing requested.
+
+
+Sending start time: 23:46:07 2018-5-5
+Sending finish time: 23:46:08 2018-5-5
+Sending took 0.483s. and finished with status code 200
+
+
+Sending start time: 23:46:11 2018-5-5
+Sending finish time: 23:46:12 2018-5-5
+Sending took 0.221s. and finished with status code 200
+
+
+Sending start time: 23:46:15 2018-5-5
+Sending finish time: 23:46:16 2018-5-5
+Sending took 0.132s. and finished with status code 200
+
+Every minute check: 23:46:20
+All requests:
+	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 483ms
+	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 221ms
+	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 132ms
+
+Every minute check: 23:46:40
+All requests:
+Nothing requested.
 
