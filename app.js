@@ -110,6 +110,6 @@ let logTimer = setInterval(() => {
     }
 
     let logMinuteDate = new Date();
-    logging(logFileName, `Every minute check: ${logMinuteDate.toLocaleTimeString()}\nRequests info:\n${conArr.join('\n')}\n\n`);
+    logging(logFileName, `\nEvery minute check: ${logMinuteDate.toLocaleTimeString()}\nRequests info:\n${conArr.join('\n')}\n\n`);
     resInfo.reqCounter = 0;
 }, 60000); // change to 60 000 later
