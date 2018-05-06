@@ -6,9 +6,9 @@ const path = require('path');
 const mime = require('mime-types');
 const moment = require('moment');
 
-const filepath = path.join(__dirname, '.', "generated.json");
+const filepath = path.join(__dirname, "generated.json");
 let logFileName = 'log_file.txt';
-const logFilePath = path.join(__dirname, '.', logFileName);
+const logFilePath = path.join(__dirname, logFileName);
 
 // response info obj - use for logging res url, user agent, total response handle time - info for all requests
 let resInfo = {};
@@ -21,10 +21,16 @@ resInfo = {
 let fileMimeType = mime.contentType(filepath).split(';')[0];
 
 // add logs to log file function
+// let logging = (file, data) => {
+//     fs.appendFile(file, data, (err) => {
+//         console.log('Added info to log file.');
+//     });
+// };
+
 let logging = (file, data) => {
-    fs.appendFile(file, data, (err) => {
-        console.log('Added info to log file.');
-    });
+    let writeStream = fs.createWriteStream(file, {'flags': 'a'});
+    writeStream.write(data);
+    writeStream.end();
 };
 
 // checking whether the log exists if not - create it - prevents doubling the first string in the file('start the log file')
@@ -86,6 +92,7 @@ server.on('request', (req, res) => {
 
     } else{
         res.writeHead(404);
+        res.end();
     }
 });
 

@@ -1,57 +1,28 @@
 Start of the log file:
 
-Every minute check: 23:54:04
+Sending start time: 10:49:39 2018-5-6
+Sending finish time: 10:49:40 2018-5-6
+Sending took 0.106s. and finished with status code 200
+
+
+Sending start time: 10:49:43 2018-5-6
+Sending finish time: 10:49:43 2018-5-6
+Sending took 0.861s. and finished with status code 200
+
+
+Sending start time: 10:49:48 2018-5-6
+Sending finish time: 10:49:48 2018-5-6
+Sending took 0.644s. and finished with status code 200
+
+
+Every minute check: 10:50:33
 Requests info:
-Nothing requested.
+	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 106ms
+	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 861ms
+	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 644ms
 
 
-Sending start time: 23:54:14 2018-5-5
-Sending finish time: 23:54:15 2018-5-5
-Sending took 0.457s. and finished with status code 200
-
-
-Sending start time: 23:54:18 2018-5-5
-Sending finish time: 23:54:19 2018-5-5
-Sending took 0.061s. and finished with status code 200
-
-
-Sending start time: 23:54:22 2018-5-5
-Sending finish time: 23:54:23 2018-5-5
-Sending took 0.25s. and finished with status code 200
-
-
-Sending start time: 23:54:26 2018-5-5
-Sending finish time: 23:54:27 2018-5-5
-Sending took 0.188s. and finished with status code 200
-
-
-Sending start time: 23:54:30 2018-5-5
-Sending finish time: 23:54:30 2018-5-5
-Sending took 0.922s. and finished with status code 200
-
-
-Sending start time: 23:54:34 2018-5-5
-Sending finish time: 23:54:34 2018-5-5
-Sending took 0.657s. and finished with status code 200
-
-
-Sending start time: 23:54:37 2018-5-5
-Sending finish time: 23:54:38 2018-5-5
-Sending took 0.222s. and finished with status code 200
-
-
-Every minute check: 23:55:04
-Requests info:
-	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 457ms
-	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 61ms
-	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 250ms
-	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 188ms
-	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 922ms
-	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 657ms
-	User agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0,---- URL: /,---- Time taken: 222ms
-
-
-Every minute check: 23:56:04
+Every minute check: 10:51:33
 Requests info:
 Nothing requested.
 
